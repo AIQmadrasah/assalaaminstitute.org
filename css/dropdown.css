@@ -15,7 +15,14 @@
      letter-spacing: 1px;
   text-transform: uppercase;
   display: inline-block;
+    background: black;
 }
+
+@media (max-width: 1000px) {
+
+      .dropdown {
+            background: yellow;
+       }
 
 .dropdown-content {
   display: none;
