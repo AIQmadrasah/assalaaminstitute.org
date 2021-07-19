@@ -6,12 +6,15 @@
 }
 
 .dropdown {
-   position: relative;
+  position: relative;
   padding: 10px 20px;
+   font-size: 12px;
+        font-weight: 800;
     color: white;
-    text-transform: uppercase;
-    font-family: Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
      letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 @media (max-width: 1000px) {
