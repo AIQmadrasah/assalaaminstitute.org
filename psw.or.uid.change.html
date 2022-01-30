@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AIQ - Reset Password or Username</title>
+
+    <!-- Custom styles for this template -->
+    <link rel= "icon" type="images/png" href= "img/aiqlogo.png">
+
+    <!--sw2 modules-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  </head>
+
+  <body>
+<!--HEADER UNDER HERE-->
+
+
+
+<!--MAIN CONTENT-->
+<!DOCTYPE html>
+<div class="MAIN-CONTENT">
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+          src="https://kit.fontawesome.com/64d58efce2.js"
+          crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="css/uid.or.psw.change.css" />
+      </head>
+      <body>
+       <div class="container">
+          <div class="forms-container">
+            <div class="signin-signup">
+              <!--password-change-request:-->
+              <form method="POST" action="https://formspree.io/f/mwkwnwpb" class="sign-in-form" id="pwd-c-r">
+                <h2 class="title">Request a Password Change</h2>
+                <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Student name" name="Student name"/>
+                </div>
+                 <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Parent Email" name="Parent Email" required/>
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="text" placeholder="Current Password" name="Current password" required/>
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="New Password" name="New Password" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Repeat New Password" name="Repeat New Password" required/>
+                </div>
+                <input type="submit" class="btn" value="Submit Request" id="pwd-submit-button"/>
+              </form>
+              <!--username-change-request:-->
+              <form method="POST" action="https://formspree.io/f/xvovbvoq" class="sign-up-form" id="uid-c-r">
+                <h2 class="title">Request a Username Change</h2>
+                <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Student Name" name="student name" />
+                </div>
+                  <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Parent Email" name="Parent Email" required/>
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Current Username" name="Currect Username" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="New Username" name="New username" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Repeat New Username" name="repeat new username" required/>
+                </div>
+                <input type="submit" class="btn" value="Submit Request" id="uid-submit-button" />
+                <p class="social-text"></p> <!--do not delete this p-->
+                <div class="social-media">  <!--do not delete this div-->
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="panels-container">
+            <div class="panel left-panel">
+              <div class="content">
+                <h3>Request a username change</h3>
+                <p>
+                </p>
+                <button class="btn transparent" id="sign-up-btn">
+                    Username
+                </button>
+              </div>
+            </div>
+            <div class="panel right-panel">
+              <div class="content">
+                <h3>Request a password change</h3>
+                <p>
+
+                </p>
+                <button class="btn transparent" id="sign-in-btn">
+                    Password
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <script src="js/uid.pdw.request.transition.js"></script>
+        <script src="js/uid.change.request.api.js"></script>
+        <script src="js/pwd-change-request.api.js"></script>
+      </body>
+        <hr>
+    </html>
+</div>
+    
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<!--FOOTER-->
+    <div class="FOOTER">
+        <!DOCTYPE HTML>
+        <style type="text/css">
+        .tftable {font-size:12px;color:##a3a3a3;width:100%;border-width: 1px;border-color: #a3a3a3;border-collapse: collapse;}
+        .tftable th {font-size:12px;background-color:#a3a3a3;border-width: 1px;padding: 1px;border-style: solid;border-color: #a3a3a3;text-align:left;}
+        .tftable tr {background-color:#a3a3a3;}
+        .tftable td {font-size:12px;border-width: 1px;padding: 1px;border-style: solid;border-color: #a3a3a3;}
+        </style>
+    
+        <table class="tftable" border="1">
+        		<center><tr><th><center>AIQ</center></th><th><center>Register</center></th><th><center><a class="nav-link" href= https://assalaminstitute.ca/studentresources.html ">Student Resources</a></center></th><th><center>Address</center></th><th><center><center><a class="nav-link" href= https://assalaminstitute.ca/contact.html ">Contact</a></center></center></th></tr></center>
+        <tr><td><center><a class="nav-link" href= https://assalaminstitute.ca/ourprograms.html ">Our Programs</center></a></td><td><center><a class="nav-link" href= https://docs.google.com/forms/d/e/1FAIpQLSfK2e1aZirjavVa3TINZc9e05yhPItmuNhq-cb25Hm-O7AI3A/viewform ">Full-Time Hifz</a></center></td><td><center><a class="nav-link" href= https://assalaminstitute.ca/SeerahLessons.html ">Seerah Lessons</a></center></td><td><center>3031 Markham Rd, Scarborough, ON</center></td><td><center>Phone:(416)-829-0234</center></td></tr>
+        <tr><td><center><a class="nav-link" href= https://assalaminstitute.ca/methods.html ">Methods of Teaching</a></center></td><td><center>Evening Hifz</center></td><td><center><a class="nav-link" href= https://assalaminstitute.ca/FiqhLessons.html ">Fiqh Lessons</a></center></td><td><center>M1X 1L6, Unit #25</center></td><td><center>Email: assalaamiq@gmail.com</center></td></tr>
+        <tr><td><center><a class="nav-link" href= https://assalaminstitute.ca/huffazlist.html ">Huffaz List</a></center></td><td></td><td><center><a class="nav-link" href= https://assalaminstitute.ca/Ahadithlessons.html ">Ahadith Lessons</a></center></td><td></td><td></td></tr>
+        <tr><td><center><a class="nav-link" href= https://assalaminstitute.ca/successstories.html ">Success Stories</a></center></td><td></td><td><center><a class="nav-link" href= https://assalaminstitute.ca/Aqaaidessons.html ">Aqaaid Lessons</a></center></td><td></td><td</td><td></td></tr>
+        <tr><td><center><a class="nav-link" href= https://assalaminstitute.ca/frequentlyaskedquestions.html ">Frequently Asked Questions</a></center></td><td></td><td><center><a class="nav-link" href= https://assalaminstitute.ca/Akhlaaqlessons.html ">Akhlaaq Lessons</a></center></td><td></td><td></td></tr>
+        <tr><td><center><a class="nav-link" href= https://assalaminstitute.ca/donate.html ">Donate</a></center></td><td></td><td></td><td></td><td><a class="nav-link" href= https://docs.google.com/forms/d/e/1FAIpQLSefO9-Nrl-T2I1rtdQgvHuTwFtg29oLcaRCJafHEbzrZ4r3pA/viewform "><center><strong>Message Here</strong></center></a></td></tr>
+        <tr><td></td><td></td><td><center><pclass="copyright text-muted">Copyright &copy; TMDevs 2018</p></center></td><td></td><td></td></tr>
+        	</table>
+        </body>
+        </html>
+        </footer>
+        
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="js/clean-blog.min.js"></script>
+    
+          </body>
+      
+        </html>
+    </div>

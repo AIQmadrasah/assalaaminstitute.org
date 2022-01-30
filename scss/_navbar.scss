@@ -9,7 +9,7 @@
     color: $gray-800;
   }
   .navbar-toggler {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 800;
     padding: 13px;
     text-transform: uppercase;
@@ -18,11 +18,38 @@
   .navbar-nav {
     > li.nav-item {
       > a {
-        font-size: 12px;
+        font-size: 15px;
         font-weight: 800;
         letter-spacing: 1px;
         text-transform: uppercase;
-      }
+
+       }  
+.dropdown {
+		  font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+	padding: 10px 20px;
+          color: white;
+  position: relative;
+  display: inline-block;
+}
+    }
+  }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
     }
   }
   @media only screen and (min-width: 992px) {
@@ -46,6 +73,16 @@
             color: fade-out($white, .2);
           }
         }
+        .dropdown {
+		  font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+	padding: 10px 20px;
+          color: $white;
+  position: relative;
+  display: inline-block;
+}
       }
     }
   }
