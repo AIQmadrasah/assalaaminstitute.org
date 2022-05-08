@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('./server');
 const fs = require('fs');
 const { google } = require('googleapis');
 const auth = new google.auth.GoogleAuth({
@@ -17,9 +16,16 @@ const main = async () => {
             spreadsheetId: process.env.SHEET_ID,
             range: `Daily!A2:H${process.env.RANGE}`
         })).data.values?.filter((entry) => entry[0]).map((entry) => {
-            const name = entry[0];
             const points = entry[entry.length - 1];
-            return { name: name, points: parseInt(points) };
+            return {
+                name: entry[0], 
+                points: parseInt(points),
+                sabaq: parseInt(entry[1]),
+                sabaqpara: parseInt(entry[2]),
+                dour: parseInt(entry[3]),
+                attendance: parseInt(entry[4]),
+                clothing: parseInt(entry[5]),
+            }
         })
     }
 
@@ -40,10 +46,10 @@ const main = async () => {
 
         values.forEach(async(value) => {
             const name = value.name.replaceAll(' ', '_');
-            const points = value.points;
             const date = new Date().toLocaleString().split(',')[0];
+            value.date = date;
             const fp = `cache/${name}.txt`;
-            if(!fs.existsSync(fp)) fs.writeFileSync(fp, `${date} | ${points}`, { encoding: 'utf-8' });
+            if(!fs.existsSync(fp)) fs.writeFileSync(fp, JSON.stringify(value), { encoding: 'utf-8' });
             let cur = fs.readFileSync(fp, { encoding: 'utf-8' }) || '';
             if(cur.includes(date)) return;
             if(cur.split('\n').length > process.env.CACHE_THRESHOLD) {
@@ -52,7 +58,7 @@ const main = async () => {
                 cur2 = cur2.join('\n');
                 cur = cur2;
             }
-            fs.writeFileSync(fp, `${cur}\n${date} | ${points}`, { encoding: 'utf-8' });
+            fs.writeFileSync(fp, `${cur}\n${JSON.stringify(value)}`, { encoding: 'utf-8' });
         })
     }
 
@@ -73,6 +79,8 @@ const main = async () => {
             }
         }).catch(console.error);
     }
+
+    require('./server')(getDailyVals);
 }
 
 main();
