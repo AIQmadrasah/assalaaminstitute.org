@@ -9,7 +9,7 @@ const execute = (cmd) => new Promise((res, rej) => exec(cmd).on('close', res).on
 
 server.use(cors())
 
-module.exports = (getDailyVals) => {
+module.exports = (getMonthlyVals) => {
     server.get('/', (req, res) => res.send('AIQ leaderboard system api'));
 
     server.get('/profile/:user', (req, res) => {
@@ -23,7 +23,7 @@ module.exports = (getDailyVals) => {
     server.get('/leaderboard', async (req, res) => {
         console.log('/leaderboard');
         if(req.query.pass != process.env.SERVER_PASS) return res.json({ error: 'Wrong password' });
-        const data = await getDailyVals();
+        const data = await getMonthlyVals();
         res.json(data);
     })
     
