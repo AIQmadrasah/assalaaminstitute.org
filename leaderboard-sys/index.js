@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./server');
 const fs = require('fs');
 const { google } = require('googleapis');
 const auth = new google.auth.GoogleAuth({
@@ -59,7 +60,6 @@ const main = async () => {
         const daily = await getDailyVals();
         const monthly = await getMonthlyVals();
         const combined = daily.map((entry, index) => ([entry.name, entry.points + monthly[index].points ]));
-        console.log(combined);
         googleSheets.spreadsheets.values.update({
             auth,
             spreadsheetId: process.env.SHEET_ID,
@@ -71,7 +71,7 @@ const main = async () => {
                     ...combined
                 ]
             }
-        }).then(console.log).catch(console.error);
+        }).catch(console.error);
     }
 }
 
