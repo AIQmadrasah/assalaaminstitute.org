@@ -6,8 +6,10 @@ window.addEventListener('load', async () => {
     })
 
     const leaderboard = await new Promise((res) => fetch(`${host}/leaderboard?pass=aiqftw`).then((res) => res.json()).then((data) => res(data)));
-    leaderboard.sort((a, b) => a.points - b.points);
-    console.log(leaderboard);
+    leaderboard.reverse();
+    leaderboard.sort((a, b) => a.points - b.points)
+    leaderboard.reverse();
+
     leaderboard.forEach((entry) => {
         const parent = document.querySelector('.mainContent');
         const html = 
