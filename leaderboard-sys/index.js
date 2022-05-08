@@ -43,8 +43,14 @@ const main = async () => {
             const date = new Date().toLocaleString().split(',')[0];
             const fp = `cache/${name}.txt`;
             if(!fs.existsSync(fp)) fs.writeFileSync(fp, `${date} | ${points}`, { encoding: 'utf-8' });
-            const cur = fs.readFileSync(fp, { encoding: 'utf-8' }) || '';
+            let cur = fs.readFileSync(fp, { encoding: 'utf-8' }) || '';
             if(cur.includes(date)) return;
+            if(cur.split('\n').length > process.env.CACHE_THRESHOLD) {
+                let cur2 = cur.split('\n');
+                cur2.shift();
+                cur2 = cur2.join('\n');
+                cur = cur2;
+            }
             fs.writeFileSync(fp, `${cur}\n${date} | ${points}`, { encoding: 'utf-8' });
         })
     }
