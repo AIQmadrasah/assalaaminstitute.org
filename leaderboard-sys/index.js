@@ -80,7 +80,26 @@ const main = async () => {
         }).catch(console.error);
     }
 
+    const reset = async () => {
+
+    }
+
     require('./server')(getDailyVals);
+
+    setInterval(async () => {
+        const now = new Date();
+        const day = ({ 'mon': 1, 'tues': 2, 'wed': 3, 'thu': 4, 'fri': 5, 'sat': 6, 'sun': 7 })[Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(now).toLowerCase()]
+        const hour = now.getHours();
+        const min = now.getMinutes();
+
+        if(day == 6 || day == 7) return;
+        
+        if(hour == 23 && min == 0) {
+            await cacheVals();
+            await saveToMonthlySheet();
+            await reset();
+        }
+    }, 60000);
 }
 
 main();

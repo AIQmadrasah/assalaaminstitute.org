@@ -11,11 +11,12 @@ window.addEventListener('load', async () => {
     leaderboard.sort((a, b) => a.points - b.points)
     leaderboard.reverse();
 
-    leaderboard.forEach((entry) => {
+    leaderboard.forEach((entry, index) => {
         const parent = document.querySelector('.mainContent');
         const html = 
         `<tr class="ee-${entry.name.replaceAll(' ', '_')} hover">
-            <th scope="row">${entry.name}</th>
+            <th scope="row">${String(index + 1)}</th>
+            <th>${entry.name}</th>
             <td>${entry.sabaq}</td>
             <td>${entry.sabaqpara}</td>
             <td>${entry.dour}</td>
