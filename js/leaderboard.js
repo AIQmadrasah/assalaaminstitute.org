@@ -10,6 +10,7 @@ window.addEventListener('load', async () => {
     leaderboard.reverse();
     leaderboard.sort((a, b) => a.points - b.points)
     leaderboard.reverse();
+    console.log(leaderboard);
 
     leaderboard.forEach((entry, index) => {
         const parent = document.querySelector('.mainContent');
@@ -20,6 +21,7 @@ window.addEventListener('load', async () => {
             <td>${entry.sabaq}</td>
             <td>${entry.sabaqpara}</td>
             <td>${entry.dour}</td>
+            <td>${entry.behaviour}</td>
             <td>${entry.attendance}</td>
             <td>${entry.clothing}</td>
             <td>${entry.points}</td>

@@ -32,6 +32,7 @@ window.onload = async () => {
             <td>${day.sabaq}</td>
             <td>${day.sabaqpara}</td>
             <td>${day.dour}</td>
+            <td>${day.behaviour}</td>
             <td>${day.attendance}</td>
             <td>${day.clothing}</td>
             <td>${day.points}</td>

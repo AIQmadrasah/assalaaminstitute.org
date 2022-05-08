@@ -34,7 +34,7 @@ const main = async () => {
         return (await googleSheets.spreadsheets.values.get({
             auth,
             spreadsheetId: process.env.SHEET_ID,
-            range: `Monthly!A2:B${process.env.RANGE}`
+            range: `Monthly!A2:H${process.env.RANGE}`
         })).data.values?.filter((entry) => entry[0]).map((entry) => {
             const points = entry[entry.length - 1];
             return {
