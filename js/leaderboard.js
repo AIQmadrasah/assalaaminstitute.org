@@ -6,6 +6,7 @@ window.addEventListener('load', async () => {
     })
 
     const leaderboard = await new Promise((res) => fetch(`${host}/leaderboard?pass=aiqftw`).then((res) => res.json()).then((data) => res(data)));
+    if(leaderboard.error) alert(leaderboard.error);
     leaderboard.reverse();
     leaderboard.sort((a, b) => a.points - b.points)
     leaderboard.reverse();
@@ -26,7 +27,7 @@ window.addEventListener('load', async () => {
         parent.insertAdjacentHTML('beforeend', html);
 
         document.querySelector(`.ee-${entry.name.replaceAll(' ', '_')}`)?.addEventListener('click', () => {
-            window.location.href = `/profile?name=${entry.name}`
+            window.location.href = `/profile.html?name=${entry.name}`
         })
     })
 })
