@@ -24,7 +24,7 @@ window.addEventListener('load', async () => {
         parent.insertAdjacentHTML('beforeend', html);
 
         document.querySelector(`.ee-${entry.name.replaceAll(' ', '_')}`)?.addEventListener('click', () => {
-            window.location.href = `/profile/${entry.name}`
+            window.location.href = `/profile?name=${entry.name}`
         })
     })
 })
