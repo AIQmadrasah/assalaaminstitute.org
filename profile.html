@@ -15,42 +15,55 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
-        type='text/css'>
-    <link
-        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-        rel='stylesheet' type='text/css'>
-
-    <!-- Custom styles for this template -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+  
+	  <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
-    <link href="sp.css" rel="stylesheet">
-    <link rel="icon" type="images/png" href="img/aiqlogo.png">
+  <link href="css/dropdown.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet">
+    <link rel= "icon" type="images/png" href= "img/aiqlogo.png">
+	  
+	    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 
-    <!--GTag.js-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-03228JE36L"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-03228JE36L');
-    </script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtlc0LJdIytb-1_uKx9wIoCatPjooWsxc",
+    authDomain: "assalaam-institute.firebaseapp.com",
+    projectId: "assalaam-institute",
+    storageBucket: "assalaam-institute.appspot.com",
+    messagingSenderId: "51725736269",
+    appId: "1:51725736269:web:d4a91d19883350ed5b3f04",
+    measurementId: "G-DKZ4TY11G1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+	  
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L0NVFSW1V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <!--Google Firebase-->
-    <script defer src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-    <script defer src="js/firebase.js"></script>
+  gtag('config', 'G-5L0NVFSW1V');
+</script>
 
-    <!--jQuery-->
-    <script src="js/jquery.js"></script>
+  </head>
 
-    <!--Main script-->
-    <script defer src="js/profile.js"></script>
-</head>
-
-<body>
+  <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
