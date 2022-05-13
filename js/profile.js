@@ -29,13 +29,11 @@ window.onload = async () => {
         const html = 
         `<tr>
             <th scope="row">${date}</th>
-            <td>${day.sabaq}</td>
-            <td>${day.sabaqpara}</td>
-            <td>${day.dour}</td>
-            <td>${day.behaviour}</td>
-            <td>${day.attendance}</td>
-            <td>${day.clothing}</td>
-            <td>${day.points}</td>
+            <td>${day.sabaq || 0}</td>
+            <td>${day.sabaqpara || 0}</td>
+            <td>${day.dour || 0}</td>
+            <td>${day.paratest || 0}</td>
+            <td>${day.points || 0}</td>
         </tr>`;
         
         parent.insertAdjacentHTML('beforeend', html);

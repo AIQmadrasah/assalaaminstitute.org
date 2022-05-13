@@ -18,13 +18,11 @@ window.addEventListener('load', async () => {
         `<tr class="ee-${entry.name.replaceAll(' ', '_')} hover">
             <th scope="row">${String(index + 1)}</th>
             <th>${entry.name}</th>
-            <td>${entry.sabaq}</td>
-            <td>${entry.sabaqpara}</td>
-            <td>${entry.dour}</td>
-            <td>${entry.behaviour}</td>
-            <td>${entry.attendance}</td>
-            <td>${entry.clothing}</td>
-            <td>${entry.points}</td>
+            <td>${entry.sabaq || 0}</td>
+            <td>${entry.sabaqpara || 0}</td>
+            <td>${entry.dour || 0}</td>
+            <td>${entry.paratest || 0}</td>
+            <td>${entry.points || 0}</td>
         </tr>`;
         
         parent.insertAdjacentHTML('beforeend', html);
