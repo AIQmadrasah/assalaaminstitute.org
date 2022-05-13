@@ -92,7 +92,7 @@ const main = async () => {
                     ...combined
                 ]
             }
-        }).catch(console.error).then(() => discord.send('[saveToMonthlySheet()]Merged monthly values with daily values'));
+        }).catch(console.error).then(() => discord.send('[saveToMonthlySheet()] Merged monthly values with daily values'));
     }
 
     const reset = async () => {
