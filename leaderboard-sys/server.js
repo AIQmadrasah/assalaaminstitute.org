@@ -3,6 +3,7 @@ const express = require('express');
 const { writeFileSync, readFileSync, existsSync } = require('fs');
 const ngrok = require('ngrok');
 const cors = require('cors');
+const { send } = require('./discord');
 
 const server = express();
 const execute = (cmd) => new Promise((res, rej) => exec(cmd).on('close', res).on('error', rej));
@@ -36,5 +37,6 @@ module.exports = (getMonthlyVals) => {
         await execute('git commit -m "[leaderboard-sys/server.js]: Update HOST"');
         await execute('git push');
         console.log('Pushed updated HOST file to github');
+        send('Pushed updated "HOST" file to github');
     })
 }

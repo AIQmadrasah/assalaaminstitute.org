@@ -1,6 +1,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const { google } = require('googleapis');
+const discord = require('./discord');
 const auth = new google.auth.GoogleAuth({
     keyFile: 'credentials.json',
     scopes: 'https://www.googleapis.com/auth/spreadsheets',
@@ -69,6 +70,8 @@ const main = async () => {
             }
             fs.writeFileSync(fp, `${cur}\n${JSON.stringify(value)}`, { encoding: 'utf-8' });
         })
+        
+        discord.send('Cached daily values');
     }
 
     const saveToMonthlySheet = async () => {
@@ -95,11 +98,11 @@ const main = async () => {
                     ...combined
                 ]
             }
-        }).catch(console.error);
+        }).catch(console.error).then(() => discord.send('[saveToMonthlySheet()]Merged monthly values with daily values'));
     }
 
     const reset = async () => {
-
+        
     }
 
     require('./server')(getMonthlyVals);
