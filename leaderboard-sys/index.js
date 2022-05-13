@@ -17,16 +17,14 @@ const main = async () => {
             spreadsheetId: process.env.SHEET_ID,
             range: `Daily!A2:H${process.env.RANGE}`
         })).data.values?.filter((entry) => entry[0]).map((entry) => {
-            const points = entry[entry.length - 1];
             return {
                 name: entry[0], 
                 points: parseInt(points),
                 sabaq: parseInt(entry[1]),
                 sabaqpara: parseInt(entry[2]),
                 dour: parseInt(entry[3]),
-                behaviour: parseInt(entry[4]),
-                attendance: parseInt(entry[5]),
-                clothing: parseInt(entry[6]),
+                paratest: parseInt(entry[4]),
+                points: parseInt(entry[5])
             }
         })
     }
@@ -37,16 +35,14 @@ const main = async () => {
             spreadsheetId: process.env.SHEET_ID,
             range: `Monthly!A2:H${process.env.RANGE}`
         })).data.values?.filter((entry) => entry[0]).map((entry) => {
-            const points = entry[entry.length - 1];
             return {
                 name: entry[0], 
                 points: parseInt(points),
                 sabaq: parseInt(entry[1]),
                 sabaqpara: parseInt(entry[2]),
                 dour: parseInt(entry[3]),
-                behaviour: parseInt(entry[4]),
-                attendance: parseInt(entry[5]),
-                clothing: parseInt(entry[6]),
+                paratest: parseInt(entry[4]),
+                points: parseInt(entry[5])
             }
         })
     }
@@ -82,9 +78,7 @@ const main = async () => {
             entry.sabaq + monthly[index].sabaq,
             entry.sabaqpara + monthly[index].sabaqpara,
             entry.dour + monthly[index].dour,
-            entry.behaviour + monthly[index].behaviour,
-            entry.attendance + monthly[index].attendance,
-            entry.clothing + monthly[index].clothing,
+            entry.paratest + monthly[index].paratest,
             entry.points + monthly[index].points
         ]))
         googleSheets.spreadsheets.values.update({
@@ -94,7 +88,7 @@ const main = async () => {
             valueInputOption: 'USER_ENTERED',
             resource: {
                 values: [
-                    ['Name', 'Sabaq points', 'Sabaq-para points', 'Dour points', 'Behaviour points', 'Attendance points', 'Clothing', 'Monthly points'],
+                    ['Name', 'Sabaq points', 'Sabaq-para points', 'Dour points', 'Para-test points', 'Monthly points'],
                     ...combined
                 ]
             }
