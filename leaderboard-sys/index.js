@@ -19,7 +19,6 @@ const main = async () => {
         })).data.values?.filter((entry) => entry[0]).map((entry) => {
             return {
                 name: entry[0], 
-                points: parseInt(points),
                 sabaq: parseInt(entry[1]),
                 sabaqpara: parseInt(entry[2]),
                 dour: parseInt(entry[3]),
@@ -37,7 +36,6 @@ const main = async () => {
         })).data.values?.filter((entry) => entry[0]).map((entry) => {
             return {
                 name: entry[0], 
-                points: parseInt(points),
                 sabaq: parseInt(entry[1]),
                 sabaqpara: parseInt(entry[2]),
                 dour: parseInt(entry[3]),
