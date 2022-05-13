@@ -94,11 +94,29 @@ const main = async () => {
     }
 
     const reset = async () => {
-        
+        let data = [];
+        for (let i = 0; i < process.env.RANGE; i++) {
+            data.push([]);
+            for (let j = 1; j <= 6; j++) {
+                data[i].push(0);                
+            }
+        }
+
+        googleSheets.spreadsheets.values.update({
+            auth,
+            spreadsheetId: process.env.SHEET_ID,
+            range: 'Daily!A:F',
+            valueInputOption: 'USER_ENTERED',
+            resource: {
+                values: [
+                    ['Name', 'Sabaq points', 'Sabaq-para points', 'Dour points', 'Para-test points', 'Monthly points'],
+                    ...data
+                ]
+            }
+        })
     }
 
     require('./server')(getMonthlyVals);
-
     setInterval(async () => {
         const now = new Date();
         const day = ({ 'mon': 1, 'tues': 2, 'wed': 3, 'thu': 4, 'fri': 5, 'sat': 6, 'sun': 7 })[Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(now).toLowerCase()]
