@@ -77,7 +77,7 @@ const main = async () => {
             entry.sabaqpara + monthly[index].sabaqpara,
             entry.dour + monthly[index].dour,
             entry.paratest + monthly[index].paratest,
-            entry.points + monthly[index].points
+            `=sum(B${index + 2}:E${index + 2})`
         ]))
         googleSheets.spreadsheets.values.update({
             auth,
@@ -120,7 +120,6 @@ const main = async () => {
     }
 
     require('./server')(getMonthlyVals);
-    reset();
     setInterval(async () => {
         const now = new Date();
         const day = ({ 'mon': 1, 'tues': 2, 'wed': 3, 'thu': 4, 'fri': 5, 'sat': 6, 'sun': 7 })[Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(now).toLowerCase()]
