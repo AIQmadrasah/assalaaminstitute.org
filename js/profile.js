@@ -22,6 +22,7 @@ window.onload = async () => {
 
     const profile = await new Promise((res) => fetch(`${host}/profile/${name}?pass=aiqftw`).then((res) => res.json()).then((data) => res(data)));
     if(profile.error) alert(profile.error);
+    profile.reverse();
     console.log(profile)
     profile.forEach((day) => {
         const date = new Date(day.date).toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
