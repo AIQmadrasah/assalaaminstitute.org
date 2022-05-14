@@ -94,11 +94,13 @@ const main = async () => {
     }
 
     const reset = async () => {
+        const names = (await getDailyVals()).map((d) => d.name).sort();
         let data = [];
         for (let i = 0; i < process.env.RANGE; i++) {
             data.push([]);
             for (let j = 1; j <= 6; j++) {
-                data[i].push(0);                
+                if(j == 1) data[i].push(names[i])
+                else data[i].push(0)
             }
         }
 
@@ -109,7 +111,7 @@ const main = async () => {
             valueInputOption: 'USER_ENTERED',
             resource: {
                 values: [
-                    ['Name', 'Sabaq points', 'Sabaq-para points', 'Dour points', 'Para-test points', 'Monthly points'],
+                    ['Name', 'Sabaq points', 'Sabaq-para points', 'Dour points', 'Para-test points', 'Total'],
                     ...data
                 ]
             }
