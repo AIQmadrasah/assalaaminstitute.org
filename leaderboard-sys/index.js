@@ -96,10 +96,11 @@ const main = async () => {
     const reset = async () => {
         const names = (await getDailyVals()).map((d) => d.name).sort();
         let data = [];
-        for (let i = 0; i < process.env.RANGE; i++) {
+        for (let i = 0; i < names.length; i++) {
             data.push([]);
             for (let j = 1; j <= 6; j++) {
                 if(j == 1) data[i].push(names[i])
+                else if(j == 6) data[i].push(`=sum(B${i + 2}:E${i + 2})`)
                 else data[i].push(0)
             }
         }
@@ -119,6 +120,7 @@ const main = async () => {
     }
 
     require('./server')(getMonthlyVals);
+    reset();
     setInterval(async () => {
         const now = new Date();
         const day = ({ 'mon': 1, 'tues': 2, 'wed': 3, 'thu': 4, 'fri': 5, 'sat': 6, 'sun': 7 })[Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(now).toLowerCase()]
