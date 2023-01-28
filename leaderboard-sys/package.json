@@ -17,6 +17,6 @@
     "google-spreadsheet": "^3.2.0",
     "googleapis": "^100.0.0",
     "ngrok": "^4.3.1",
-    "node-fetch": "^3.2.4"
+    "node-fetch": "^3.2.10"
   }
 }
