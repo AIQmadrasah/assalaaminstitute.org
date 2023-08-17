@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+document.write('<!DOCTYPE html>
 <html lang="en">
  <style>
 		  .dropdown {
@@ -79,3 +80,4 @@
       </div>
     </nav>
     </html>
+')
