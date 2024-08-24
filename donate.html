@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	  <style>
-		  .dropdown {
-  position: absolute;
-  padding: 10px 20px;
-  		  font-size: 12px;
-        font-weight: 800;
-    color: white;
-  font-family: Roboto, sans-serif;
-     letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-}
-@media (max-width: 1000px) {
-
-      .dropdown {
-          position: absolute;
-  padding: 10px 20px;
-  		  font-size: 12px;
-        font-weight: 800;
-    color: gray;
-  font-family: Roboto, sans-serif;
-     letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-
-       }
-	 a:link {
-  color: white;
-}
-	  </style>
+<head>
+    <style>
+        .dropdown {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: 800;
+            color: white;
+            font-family: Roboto, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        @media (max-width: 1000px) {
+            .dropdown {
+                position: absolute;
+                padding: 10px 20px;
+                font-size: 12px;
+                font-weight: 800;
+                color: gray;
+                font-family: Roboto, sans-serif;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                display: inline-block;
+            }
+        }
+        a:link {
+            color: white;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -42,193 +41,141 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
-	      <link href="css/footer.css" rel="stylesheet">
-	      <link href="css/dropdown.css" rel="stylesheet">  
-    <link rel= "icon" type="images/png" href= "img/aiqlogo.png">
-   <!--jQuery-->
-  <script src="js/jquery.js"></script>
-	  
-	  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/dropdown.css" rel="stylesheet">
+    <link rel="icon" type="images/png" href="img/aiqlogo.png">
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAtlc0LJdIytb-1_uKx9wIoCatPjooWsxc",
+            authDomain: "assalaam-institute.firebaseapp.com",
+            projectId: "assalaam-institute",
+            storageBucket: "assalaam-institute.appspot.com",
+            messagingSenderId: "51725736269",
+            appId: "1:51725736269:web:d4a91d19883350ed5b3f04",
+            measurementId: "G-DKZ4TY11G1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5L0NVFSW1V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5L0NVFSW1V');
+    </script>
+</head>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyAtlc0LJdIytb-1_uKx9wIoCatPjooWsxc",
-    authDomain: "assalaam-institute.firebaseapp.com",
-    projectId: "assalaam-institute",
-    storageBucket: "assalaam-institute.appspot.com",
-    messagingSenderId: "51725736269",
-    appId: "1:51725736269:web:d4a91d19883350ed5b3f04",
-    measurementId: "G-DKZ4TY11G1"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-	  
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L0NVFSW1V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5L0NVFSW1V');
-</script>
-	  
-  </head>
-	
-  <body>
-    
-  <!-- Navigation -->
- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"><img src = "img/aiqlogo.png" height = 70/></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-  <div class="dropdown">
-  <span>About Us</span>
-<i class="fa fa-caret-down"></i>
-  <div class="dropdown-content">
- <p><a class="nav-link" href="ourstaff.html">Our Staff</a></p>
-<p><a class="nav-link" href="ourprograms.html">Our Programs</a></p>
-<p><a class="nav-link" href="methods.html">Methods of Teaching</a></p>
-<p><a class="nav-link" href="frequentlyaskedquestions.html">FAQ</a></p>
-  </div>
- </div>
-                <div class="dropdown">
-  <span class="a:link" onclick="window.location='huffazlist.html'">Huffaz List</span>
- </div>
-    <div class="dropdown">
-  <span class="a:link" onclick="window.location='studentresources.html'">Student Resources</span>
- </div>
-    <div class="dropdown">
-  <span class="a:link" onclick="window.location='successstories.html'">Success Stories</span>
- </div>
-    <div class="dropdown">
-  <span class="a:link" onclick="window.location='contact.html'">Contact Us</span>
- </div>
-    <div class="dropdown">
-  <span class="a:link" onclick="window.location='donate.html'">Donate</span>
- </div>
-    <div class="dropdown">
-  <span class="a:link" onclick="window.location='taraweeh.html'">Taraweeh</span>
- </div>
-
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="img/aiqlogo.png" height="70" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <div class="dropdown">
+                        <span>About Us</span>
+                        <i class="fa fa-caret-down"></i>
+                        <div class="dropdown-content">
+                            <p><a class="nav-link" href="ourstaff.html">Our Staff</a></p>
+                            <p><a class="nav-link" href="ourprograms.html">Our Programs</a></p>
+                            <p><a class="nav-link" href="methods.html">Methods of Teaching</a></p>
+                            <p><a class="nav-link" href="frequentlyaskedquestions.html">FAQ</a></p>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <span class="a:link" onclick="window.location='huffazlist.html'">Huffaz List</span>
+                    </div>
+                    <div class="dropdown">
+                        <span class="a:link" onclick="window.location='studentresources.html'">Student Resources</span>
+                    </div>
+                    <div class="dropdown">
+                        <span class="a:link" onclick="window.location='successstories.html'">Success Stories</span>
+                    </div>
+                    <div class="dropdown">
+                        <span class="a:link" onclick="window.location='contact.html'">Contact Us</span>
+                    </div>
+                    <div class="dropdown">
+                        <span class="a:link" onclick="window.location='donate.html'">Donate</span>
+                    </div>
+                    <div class="dropdown">
+                        <span class="a:link" onclick="window.location='taraweeh.html'">Taraweeh</span>
+                    </div>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-    
+
     <!-- Page Header -->
-
     <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="page-heading">
-                <h1><strong><div style="font-family: Open Sans, sans-serif">Donate</strong></h1>
-              
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1><strong><div style="font-family: Open Sans, sans-serif">Donate</strong></h1>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </header>
-	  
+
     <!-- Main Content -->
-	  
-</form></center>
-
-		<!-- <center><a><img src='https://www.abcfundraising.com/thermometer-generator?max=30000&cur=6566&symbol=%24&color=green' alt='Fundraising ideas for schools, churches, and youth sports teams' width="300"  height="500" /></a></center>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <!-- Insert Donate Now Section Here -->
+                <h2>Donate Now</h2>
+                <p><a href="https://app.irm.io/assalaaminstitute.org" target="_blank" class="btn btn-primary">Click here to donate</a></p>
+            </div>
+        </div>
     </div>
-	      
-	         </div>
-	    </div>
-	    <hr>
-  <!-- Footer -->
-  <title>Footer</title>
-  <meta charset="utf-8">
-  <name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-<footer class="container-fluid bg-grey py-5">
-<div class="container">
-   <div class="row">
-      <div class="col-md-6">
-         <div class="row">
-            <div class="col-md-6 ">
-               <div class="logo-part">
-                  <img src="aiqlogofooter.png" alt="logo" height = 110 >
-                  <p><i class="fa fa-map-marker" aria-hidden="true"></i> 3001 Markham Rd #10, Scarborough, ON M1X 1L6</p>
-               </div>
-            </div>
-            <div class="col-md-6 px-4">
-               <h6> Contact Us</h6>
-               <p><i class="fa fa-phone" aria-hidden="true"></i> (416) 829-0234</p>
-	       <p><i class="fa fa-envelope" aria-hidden="true"></i> assalaamiq@gmail.com</p>
-		        <a href="contact.html" class="btn-footer"> Message Us Here</a><br>
-            </div>
-         </div>
-      </div>
-      <div class="col-md-6">
-         <div class="row">
-            <div class="col-md-6 px-4">
-               <h6> Quick Links</h6>
-		      <div class="row">
-                  <div class="col-md-6">
-			  <ul>
-		 <li><a href="successstories.html"> Success Stories</a></li>
-			<li><a href="terms.txt" style="color: lightgray; padding-top: -10px;"> Terms & Conditions</a></li>
-                      <li><a href="refund.txt" style="color: lightgray; padding-top: -10px;"> Refund Policy</a></li>
-                         <li><a href="dontate.html"> Donate</a></li>
-                      <li><a href="frequentlyaskedquestions.html"> FAQ</a></li>
- 
-                     </ul>
-                  </div>
-                  <div class="col-md-6 px-4">
-			  <ul>
-                       <li><a href="index.html"> Home</a></li>
-                         <li><a href="ourprograms.html"> Our Programs</a></li>
-			 <li><a href="studentresources.html"> Student Resources</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-6 ">
-               <h6> Follow Us</h6>
-               <div class="social">
-		       <a href="https://www.youtube.com/channel/UCHzex2h7tUuwIvoP-h7ehtw" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-		       <a href="https://www.instagram.com/assalaaminstituteofquraan/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-		       		       <a href="https://twitter.com/AIQmadrasah" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-		       <p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-</footer>
-<!-- Credit to https://bootsnipp.com/snippets/M56El  -->
 
+    <hr>
 
-  </body>
-
-</html>
+    <!-- Footer -->
+    <footer class="container-fluid bg-grey py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div class="logo-part">
+                                <img src="aiqlogofooter.png" alt="logo" height="110">
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> 3001 Markham Rd #10, Scarborough, ON M1X 1L6</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 px-4">
+                            <h6> Contact Us</h6>
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> (416) 829-0234</p>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i> assalaamiq@gmail.com</p>
+                            <a href="contact.html" class="btn-footer"> Message Us Here</a><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 px-4">
+                            <h6> Quick Links</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><a href="successstories.html"> Success Stories</a></li>
+                                        <li><a href="terms.txt" style="color: lightgray; padding-top: -10px;"> Terms & Conditions</a></li>
+                                        <li><a href="refund.txt" style="color: lightgray; padding-top: -10px;"> Refund Policy</a></li>
+                                        <li><a href="donate
